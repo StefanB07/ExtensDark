@@ -1,0 +1,31 @@
+{
+    
+      "version": "0.3",
+      "name": "FOARTE DARK MODE GLOBAL",
+      "manifest_version": 2,
+      "short_name": "modulnegru",
+      "description": "Face totul inchis la culoare merge automat",
+      "permissions": ["tabs","storage", "<all_urls>", "contextMenus"],
+      "web_accessible_resources": ["css/*.css"],
+      "homepage_url": "https://darknightmode.com",
+      "offline_enabled": true,
+
+      "content_scripts": [
+            {
+                "all_frames": true,
+                "match_about_blank": true,
+                "matches": ["<all_urls>"],
+                "run_at": "document_start",
+                "exclude_globs": ["*/chrome/newtab*"],
+                "js": ["js/main.js"]
+            },
+            {
+                "all_frames": true,
+                "match_about_blank": true,
+                "matches": ["<all_urls>"],
+                "run_at": "document_start",
+                "exclude_globs": ["*/chrome/newtab*"],
+                "css": ["css/universal.css"]
+            }
+        ]
+    }
